@@ -25,22 +25,23 @@
     <script src='js/bz.js'></script>
     <script src='js/moment.js'></script>
     <script src='js/md5.min.js'></script>
-    <script defer src='js/brh.js?r=0.2'></script>
-    <link rel="stylesheet" href="style/main.css" />
+    <script defer src='js/brh.js?r=0.3'></script>
+    <script defer src='js/app.js?r=0.3'></script>
+    <link rel="stylesheet" href="style/main.css?r=0.2" />
   </head>
   <body>
     <div class="container">
-      <h2>Bugzilla Q3 Report Helper [2013-7-15 ~ 2013-9/30]</h2>
+      <h2>Bugzilla Report Helper Q3[2013-7-15 ~ 2013-9/30]</h2>
       <em>by alive@mozilla.com</em>
       <div id="container">
       </div>
     </div>
 
-    <div class="template col-sm-6 col-md-3" id="person-template">
-      <div class="thumbnail">
-        <img class="avatar pull-right" data-src="holder.js/300x200"></img>
+    <div class="template col-sm-6 col-md-4" id="person-template">
+      <div class="thumbnail well">
+        <img class="avatar pull-right"></img>
         <div><h2 class="name"></h2> <h5 class="email pull-right hidden"></h5></div>
-        <span class="resolved_count"></span> / <span class="assigned_count"></span>
+        <span class="resolved_count"><i class='icon-cog icon-spin'></i></span> / <span class="assigned_count"><i class='icon-cog icon-spin'></i></span>
         <div class="resolved">
           <h4>Resolved bugs</h4>
           <i class="icon-download-alt resolved_more"></i>
@@ -57,6 +58,7 @@
           <h4>Commented bugs</h4><div class="commented_count"></div>
           <div class="commented_output"></div>
         </div-->
+        <button class="btn btn-info reload">Reload</button>
       </div>
     </div>
 

@@ -4,9 +4,14 @@ h4, h2, h5 {
 
 .resolved_count,
 .assigned_count {
-  font-size: 70px;
+  font-size: 50px;
 }
 
 .hidden {
   display: none;
+}
+
+img.avatar {
+  width: 70px;
+  max-width: 70px;
 }
