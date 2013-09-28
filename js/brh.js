@@ -232,7 +232,7 @@ var MozillaTaiwan = [
     email: 'hchang@mozilla.com'
   },
   {
-    name: 'Vincent Chang',
+    name: 'VChang',
     email: 'vchang@mozilla.com'
   },
   {
