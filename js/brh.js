@@ -15,7 +15,54 @@
     password: 'bztest1A'
   };
 
-  BZQuery.prototype.state = 'inited';
+  BZQuery.prototype.bugs = {};
+  BZQuery.prototype.loading = {};
+
+  BZQuery.prototype.downloadBugs = function bzq_downloadBugs(config, type, count) {
+    var self = this;
+    this.element.removeClass('col-md-4').addClass('col-md-12');
+    this.element.find('.' + type + '_more').hide();
+    this.element.find('.' + type + '_hide').show();
+    this.element.find('.' + type + '_output').show();
+    var progress = this.element.find('.commented_output .progress');
+    if (this.loading.type === false) {
+
+    } else {
+      if (progress) {
+        progress.show();
+        this.setDuration(progress.find('.progress-bar'), count);
+        progress.find('.progress-bar').progressbar();
+      }
+
+      if (this.loading.type === true)
+        return;
+    }
+
+    this.loading.type = true;
+    this.bugzilla.searchBugs(config, function(error, bugs) {
+      if (!error) {
+        var outcome = '<ul>';
+        bugs.sort(self.sorters.byLastChangeTime);
+        for (var i = 0; i < bugs.length; i++) {
+          outcome += self.formatBug(bugs[i], true);
+        }
+        outcome += '</ul>';
+        self.element.find('.' + type + '_count').text(bugs.length);
+        self.element.find('.' + type + '_output').html($(outcome));
+        self.loading.type = false;
+      }
+    });
+  };
+
+  BZQuery.prototype.setDuration = function bzq_setDuration(target, t) {
+    if (target) {
+      target.css('-webkit-transition-duration', t + 's');
+      target.css('-moz-transition-duration', t + 's');
+      target.css('-ms-transition-duration', t + 's');
+      target.css('-o-transition-duration', t + 's');
+      target.css('transition-duration', t + 's');
+    }
+  };
 
   BZQuery.prototype.reload = function bzq_reload() {
     this._renderResolvedBugs();
@@ -103,6 +150,7 @@
     this.element.find('.email').html(this.config.email);
     this.element.find('.resolved_hide').hide();
     this.element.find('.assigned_hide').hide();
+    this.element.find('.commented_hide').hide();
     this.element.find('.avatar').prop('src',
       'http://www.gravatar.com/avatar/' + md5(this.config.email) + '?' +
       this.bugzilla.urlEncode({
@@ -120,13 +168,27 @@
     comment['email1'] = this.config.email;
     comment['email1_type'] = 'exact';
     comment['email1_comment_creator'] = 1;
-    comment['comment.creator'] = this.config.email;
     comment['changed_after'] = moment().utc().day(-1).format('YYYY-MM-DD');
+    this.element.find('.commented_more').hide();
+    this.element.find('.commented_output .progress').hide();
 
     this.bugzilla.countBugs(comment, function(error, count) {
       if (!error) {
         self.element.find('.commented_count').text(count);
+        self.element.find('.commented_more').show().click(function() {
+          self.downloadBugs(comment, 'commented', count);
+        });
       }
+    });
+
+    this.element.find('.commented_hide').click(function() {
+      self.element.removeClass('col-md-12').addClass('col-md-4');
+      self.element.find('.commented_more').show();
+      self.element.find('.commented_hide').hide();
+      self.element.find('.commented_output').hide();
+      var progress = self.element.find('.commented_output .progress');
+      if (progress)
+        progress.hide();
     });
   };
 
@@ -138,7 +200,12 @@
     item += '<a href="http://bugzil.la/' + bug.id + '" target="_blank">' +
             bug.id + '</a> - ';
 
-    item += bug.summary;
+    item += '<h6><span class="label label-primary">' + bug.component + '</span></h6> ';
+
+    var s = bug.summary.replace(/\[/g, '<span class="label label-info">');
+    s = s.replace(/\]/g, '</span> ');
+
+    item += s;
 
     item += '</li>\n';
     return item;
