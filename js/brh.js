@@ -12,13 +12,7 @@
 
   BZQuery.prototype.config = {};
 
-  BZQuery.prototype.render = function bzq_render() {
-    var self = this;
-    $(new EJS({ 'url': 'person.ejs' }).render({
-      id: this._id,
-      email: this.config.email
-    })).appendTo(this.containerElement);
-    this.element = $('#bqz' + this._id);
+  BZQuery.prototype._renderResolvedBugs = function() {
     /* Rendering resolving bugs */
     var resolve = jQuery.extend({}, this.config);
     resolve['email1'] = this.config.email;
@@ -41,15 +35,26 @@
         self.element.find('.resolved_output').html($(outcome));
       }
     });
-    
+  };
+
+  BZQuery.prototype.render = function bzq_render() {
+    var self = this;
+    $(new EJS({ 'url': 'person.ejs' }).render({
+      id: this._id,
+      email: this.config.email
+    })).appendTo(this.containerElement);
+    this.element = $('#bqz' + this._id);
+    // this._renderResolvedBugs();
+    this._renderCommentedBugs();
+  };
+
+  BZQuery.prototype._renderCommentedBugs = function() {
     /* Rendering commented bugs */
     var comment = jQuery.extend({}, this.config);
     comment['email1'] = this.config.email;
     comment['email1_type'] = 'equals_any';
     comment['email1_comment_author'] = 1;
     comment['changed_after'] = moment().utc().day(-75).format('YYYY-MM-DD');
-    comment['changed_field'] = 'status';
-    comment['changed_field_to'] = 'RESOLVED';
 
     this.bugzilla.searchBugs(comment, function(error, bugs) {
       console.log(error);
@@ -66,7 +71,6 @@
         self.element.find('.commented_output').html($(outcome));
       }
     });
-    
   };
 
   BZQuery.prototype.containerElement = $('#container');
