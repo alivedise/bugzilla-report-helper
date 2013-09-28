@@ -20,6 +20,7 @@
   BZQuery.prototype.reload = function bzq_reload() {
     this._renderResolvedBugs();
     this._renderAssignedBugs();
+    this._renderCommentedBugs();
   };
 
   BZQuery.prototype._renderResolvedBugs = function() {
@@ -118,22 +119,13 @@
     var comment = jQuery.extend({}, this.config);
     comment['email1'] = this.config.email;
     comment['email1_type'] = 'exact';
-    comment['email1_long_desc'] = 1;
-    comment['email1_long_desc1'] = 1;
-    comment['email_long_desc'] = 1;
+    comment['email1_comment_creator'] = 1;
+    comment['comment.creator'] = this.config.email;
     comment['changed_after'] = moment().utc().day(-1).format('YYYY-MM-DD');
 
-    this.bugzilla.searchBugs(comment, function(error, bugs) {
+    this.bugzilla.countBugs(comment, function(error, count) {
       if (!error) {
-        //self.bugs = bugs;
-        var outcome = '<ul>';
-        bugs.sort(self.sorters.byLastChangeTime);
-        for (var i = 0; i < bugs.length; i++) {
-          outcome += self.formatBug(bugs[i], true);
-        }
-        outcome += '</ul>';
-        self.element.find('.commented_count').text(bugs.length);
-        self.element.find('.commented_output').html($(outcome));
+        self.element.find('.commented_count').text(count);
       }
     });
   };

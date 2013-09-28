@@ -3,7 +3,8 @@ h4, h2, h5 {
 }
 
 .resolved_count,
-.assigned_count {
+.assigned_count,
+.commented_count {
   font-size: 50px;
 }
 

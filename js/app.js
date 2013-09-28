@@ -260,7 +260,8 @@
 
   MozillaTaiwan.forEach(function(person) {
     PeopleList.push(new BZQuery(person.name, person.email));
-  }, this);
+    return false;
+  });
 
   $('#reload').click(function() {
     PeopleList.forEach(function(person) {

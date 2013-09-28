@@ -25,9 +25,9 @@
     <script src='js/bz.js'></script>
     <script src='js/moment.js'></script>
     <script src='js/md5.min.js'></script>
-    <script defer src='js/brh.js?r=0.5'></script>
-    <script defer src='js/app.js?r=0.5'></script>
-    <link rel="stylesheet" href="style/main.css?r=0.5" />
+    <script defer src='js/brh.js?r=0.6'></script>
+    <script defer src='js/app.js?r=0.6'></script>
+    <link rel="stylesheet" href="style/main.css?r=0.6" />
   </head>
   <body>
     <div class="container">
@@ -41,26 +41,26 @@
       <div class="thumbnail well">
         <img class="avatar pull-right"></img>
         <div><h2 class="name"></h2> <h5 class="email pull-right hidden"></h5></div>
-        <div class="resolved">
-          <span class="resolved_count"><i class='icon-cog icon-spin'></i></span> <span class="glyphicon glyphicon-ok"></span> Resolved  
-          <i class="icon-download-alt resolved_more"></i>
-          <i class="icon-upload-alt resolved_hide"></i>
-          <div class="resolved_output"></div>
-        </div>
         <ul class="nav">
-        <li class="nav-divider"></li>
+          <div class="resolved">
+            <span class="resolved_count"><i class='icon-cog icon-spin'></i></span> <span class="glyphicon glyphicon-ok"></span> Resolved  
+            <i class="icon-download-alt resolved_more"></i>
+            <i class="icon-upload-alt resolved_hide"></i>
+            <div class="resolved_output"></div>
+          </div>
+          <li class="nav-divider"></li>
+          <div class="assigned">
+            <span class="assigned_count"><i class='icon-cog icon-spin'></i></span> <span class="glyphicon glyphicon-road"></span> Assigned 
+            <i class="icon-download-alt assigned_more"></i>
+            <i class="icon-upload-alt assigned_hide"></i>
+            <div class="assigned_output"></div>
+          </div>
+          <li class="nav-divider"></li>
+          <div class="commented">
+            <span class="commented_count"><i class='icon-cog icon-spin'></i></span> <span class="glyphicon glyphicon-comment"></span> Commented
+            <div class="commented_output"></div>
+          </div>
         </ul>
-        <div class="assigned">
-          <span class="assigned_count"><i class='icon-cog icon-spin'></i></span> <span class="glyphicon glyphicon-road"></span> Assigned 
-          <i class="icon-download-alt assigned_more"></i>
-          <i class="icon-upload-alt assigned_hide"></i>
-          <div class="assigned_output"></div>
-        </div>
-        <!--div class="commented">
-          <h4>Commented bugs</h4><div class="commented_count"></div>
-          <div class="commented_output"></div>
-        </div-->
-        <!--button class="btn btn-info reload">Reload</button-->
       </div>
     </div>
 
