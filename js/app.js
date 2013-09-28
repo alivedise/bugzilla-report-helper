@@ -251,6 +251,10 @@
     {
       name: 'Tim',
       email: 'timdream@gmail.com'
+    },
+    {
+      name: 'Evelyn',
+      email: 'ehung@mozilla.com'
     }
   ];
 
