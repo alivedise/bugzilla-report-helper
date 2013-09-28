@@ -24,14 +24,30 @@
     <script src='js/async_storage.js'></script>
     <script src='js/bz.js'></script>
     <script src='js/moment.js'></script>
-    <script src='js/ejs.js'></script>
-    <script defer src='js/brh.js'></script>
+    <script defer src='js/brh.js?r=22'></script>
     <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
     <div class="container">
-      <h3>Bugzilla Q3 Report Helper [2013-7-15 ~ 2013-9/30]</h3>
+      <h3>Bugzilla Q3 Report Helper [2013-7-15 ~ 2013-9/30] by alive@mozilla.com</h3>
       <div id="container">
+      </div>
+    </div>
+
+    <div class="template col-sm-6 col-md-3" id="person-template">
+      <div class="thumbnail">
+        <div><h2 class="name"></h2> <h5 class="email pull-right hidden"></h5></div>
+        <span class="resolved_count"></span>
+        <div class="resolved">
+          <h4>Resolved bugs</h4>
+          <i class="icon-download-alt resolved_more"></i>
+          <i class="icon-upload-alt resolved_hide"></i>
+          <div class="resolved_output"></div>
+        </div>
+        <!--div class="commented">
+          <h4>Commented bugs</h4><div class="commented_count"></div>
+          <div class="commented_output"></div>
+        </div-->
       </div>
     </div>
 

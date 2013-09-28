@@ -109,6 +109,7 @@ BugzillaClient.prototype = {
     if(typeof XMLHttpRequest != "undefined") {
       // in a browser
       var req = new XMLHttpRequest();
+      console.log(url);
       req.open(method, url, true);
       req.setRequestHeader("Accept", "application/json");
       if (method.toUpperCase() !== "GET") {

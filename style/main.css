@@ -1,0 +1,11 @@
+h4, h2, h5 {
+  display: inline-block;
+}
+
+.resolved_count {
+  font-size: 70px;
+}
+
+.hidden {
+  display: none;
+}
