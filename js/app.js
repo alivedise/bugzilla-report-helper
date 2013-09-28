@@ -1,6 +1,4 @@
  (function(window) {
-  $('.template').hide();
-
   var MozillaTaiwan = [
     {
       name: 'Alive',

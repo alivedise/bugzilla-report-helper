@@ -170,6 +170,7 @@
     comment['email1_comment_creator'] = 1;
     comment['changed_after'] = moment().utc().day(-1).format('YYYY-MM-DD');
     this.element.find('.commented_more').hide();
+    this.element.find('.commented_output').hide();
 
     this.bugzilla.countBugs(comment, function(error, count) {
       if (!error) {
