@@ -79,7 +79,7 @@
       email: 'hchang@mozilla.com'
     },
     {
-      name: 'VChang',
+      name: 'Vincent Chang',
       email: 'vchang@mozilla.com'
     },
     {
@@ -217,6 +217,42 @@
     {
       name: 'Shawn',
       email: 'shuang@mozilla.com'
+    },
+    {
+      name: 'Shawn Ku',
+      email: 'sku@mozilla.com'
+    },
+    {
+      name: 'Vincent Lin',
+      email: 'vlin@mozilla.com'
+    },
+    {
+      name: 'Vincent Liu',
+      email: 'vliu@mozilla.com'
+    },
+    {
+      name: 'Viral',
+      email: 'vwang@mozilla.com'
+    },
+    {
+      name: 'TingYuan',
+      email: 'thuang@mozilla.com'
+    },
+    {
+      name: 'Thinker',
+      email: 'tlee@mozilla.com'
+    },
+    {
+      name: 'Cervantes',
+      email: 'cyu@mozilla.com'
+    },
+    {
+      name: 'CJ',
+      email: 'cku@mozilla.com'
+    },
+    {
+      name: 'Tim',
+      email: 'timdream@gmail.com'
     }
   ];
 

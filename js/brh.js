@@ -108,6 +108,7 @@
         d: 'http://blogdotappsfueldotcom.files.wordpress.com/2013/04/firefoxos.png?w=70',
         s: 70
       }));
+    var self = this;
     this.reload();
   };
 
