@@ -25,14 +25,11 @@
     resolve['changed_field'] = 'status';
     resolve['changed_field_to'] = 'RESOLVED';
     this.bugzilla.searchBugs(resolve, function(error, bugs) {
-      console.log(error);
       if (!error) {
-        console.log(bugs);
         //self.bugs = bugs;
         var outcome = '<ul>';
         bugs.sort(self.sorters.byLastChangeTime);
         for (var i = 0; i < bugs.length; i++) {
-          console.log(bugs[i]);
           outcome += self.formatBug(bugs[i], true);
         }
         outcome += '</ul>';
@@ -53,14 +50,50 @@
     });
   };
 
+  BZQuery.prototype._renderAssignedBugs = function() {
+    var self = this;
+    /* Rendering resolving bugs */
+    var assign = jQuery.extend({}, this.config);
+    assign['email1'] = this.config.email;
+    assign['email1_assigned_to'] = 1;
+    assign['bug_status'] = ['NEW', 'UNCONFIRMED', 'ASSIGNED', 'REOPENED', 'READY'];
+    this.bugzilla.searchBugs(assign, function(error, bugs) {
+      if (!error) {
+        //self.bugs = bugs;
+        var outcome = '<ul>';
+        bugs.sort(self.sorters.byLastChangeTime);
+        for (var i = 0; i < bugs.length; i++) {
+          outcome += self.formatBug(bugs[i], true);
+        }
+        outcome += '</ul>';
+        self.element.find('.assigned_count').text(bugs.length);
+        self.element.find('.assigned_output').html($(outcome));
+        self.element.find('.assigned_output').hide();
+        self.element.find('.assigned_more').click(function() {
+          self.element.find('.assigned_more').hide();
+          self.element.find('.assigned_hide').show();
+          self.element.find('.assigned_output').show();
+        });
+        self.element.find('.assigned_hide').click(function() {
+          self.element.find('.assigned_more').show();
+          self.element.find('.assigned_hide').hide();
+          self.element.find('.assigned_output').hide();
+        });
+      }
+    });
+  };
+
   BZQuery.prototype.render = function bzq_render() {
     this.containerElement.append($('#person-template').clone().prop('id', 'bqz' + this._id).removeClass('template'));
     this.element = $('#bqz' + this._id);
     this.element.show();
     this.element.find('.name').html(this.config.name);
     this.element.find('.email').html(this.config.email);
-    this.element.find('.resolved_hide').hide()
+    this.element.find('.resolved_hide').hide();
+    this.element.find('.assigned_hide').hide();
+    this.element.find('.avatar').prop('src', 'http://www.gravatar.com/avatar/' + md5(this.config.email) + '?s=50');
     this._renderResolvedBugs();
+    this._renderAssignedBugs();
     //this._renderCommentedBugs();
   };
 
@@ -76,14 +109,11 @@
     comment['changed_after'] = moment().utc().day(-1).format('YYYY-MM-DD');
 
     this.bugzilla.searchBugs(comment, function(error, bugs) {
-      console.log(error);
       if (!error) {
-        console.log(bugs);
         //self.bugs = bugs;
         var outcome = '<ul>';
         bugs.sort(self.sorters.byLastChangeTime);
         for (var i = 0; i < bugs.length; i++) {
-          console.log(bugs[i]);
           outcome += self.formatBug(bugs[i], true);
         }
         outcome += '</ul>';
