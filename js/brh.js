@@ -20,7 +20,12 @@
 
   BZQuery.manager = [];
 
-  BZQuery.prototype.loadingIndicator = '<i class=\'icon-cog icon-spin\'></i>';
+  BZQuery.prototype.loadingIndicator = '<i class="icon-cog icon-spin"></i>';
+  BZQuery.prototype.progressingIndicator =
+    '<div class="progress active progress-striped">' +
+      '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuetransitiongoal="100">' +
+      '</div>' +
+    '</div>';
 
   BZQuery.prototype.filter = function bzq_filter(keyword, type) {
     if (keyword === '' || keyword === 'all') {
@@ -34,8 +39,18 @@
         this.hide();
       }
     } else {
-      if (this.functional && this.functional.search(keyword) === 0) {
-        this.show();
+      if (this.functional) {
+        if (Array.isArray(this.functional)) {
+          if (this.functional.indexOf(keyword) >= 0) {
+            this.show();
+          } else {
+            this.hide();
+          }
+        } else if (this.functional.search(keyword) === 0) {
+          this.show();
+        } else {
+          this.hide();
+        }
       } else {
         this.hide();
       }
@@ -53,29 +68,72 @@
     this.element.stop().hide();
   };
 
+  BZQuery.prototype.commented = '';
+  BZQuery.prototype.assigned = '';
+  BZQuery.prototype.resolved = '';
+
   BZQuery.prototype.downloadBugs = function bzq_downloadBugs(config, type, count) {
     var self = this;
+    var progress = this.element.find('.' + type + '_output .progress');
+
     this.element.removeClass('col-md-4').addClass('col-md-12');
     this.element.find('.' + type + '_more').hide();
     this.element.find('.' + type + '_hide').show();
     this.element.find('.' + type + '_output').show();
-    var progress = this.element.find('.commented_output .progress');
-    if (this.loading.type === false) {
 
+    if (this[type] && this[type].deferred) {
+      if (this[type].deferred.state() == 'pending') {
+        if (this[type].deferred._start === config.start &&
+            this[type].deferred._end === config.end) {
+          // Conig is the same, don't worry.
+          if (progress) {
+            progress.show();
+            if (!progress.data('bs.progressbar')) {
+              this.setDuration(progress.find('.progress-bar'), count);
+              progress.find('.progress-bar').progressbar();
+            }
+          }
+        } else {
+          // New config, throw the old away.
+          this[type].deferred.reject('throwaway');
+          if (progress) {
+            progress.show();
+            if (!progress.data('bs.progressbar')) {
+              this.setDuration(progress.find('.progress-bar'), count);
+              progress.find('.progress-bar').progressbar();
+            }
+          } else {
+            this.element.find('.' + type + '_output').html(this.progressingIndicator);
+            progress = this.element.find('.' + type + '_output .progress');
+            this.setDuration(progress.find('.progress-bar'), count);
+            progress.find('.progress-bar').progressbar();
+          }
+        }
+      }
     } else {
       if (progress) {
         progress.show();
+        if (!progress.data('bs.progressbar')) {
+          this.setDuration(progress.find('.progress-bar'), count);
+          progress.find('.progress-bar').progressbar();
+        }
+      } else {
+        this.element.find('.' + type + '_output').html(this.progressingIndicator);
+        progress = this.element.find('.' + type + '_output .progress');
         this.setDuration(progress.find('.progress-bar'), count);
         progress.find('.progress-bar').progressbar();
       }
-
-      if (this.loading.type === true)
-        return;
     }
 
-    this.loading.type = true;
+    var d = $.Deferred();
+    if (!this[type])
+      this[type] = {};
+
+    d._start = config.start;
+    d._end = config.end;
+    this[type].deferred = d;
     this.bugzilla.searchBugs(config, function(error, bugs) {
-      if (!error) {
+      if (!error && d.state() !== 'rejected') {
         var outcome = '<ul>';
         bugs.sort(self.sorters.byLastChangeTime);
         for (var i = 0; i < bugs.length; i++) {
@@ -84,9 +142,10 @@
         outcome += '</ul>';
         self.element.find('.' + type + '_count').text(bugs.length);
         self.element.find('.' + type + '_output').html($(outcome));
-        self.loading.type = false;
+        d.resolve('finished');
       }
     });
+    return d.promise();
   };
 
   BZQuery.prototype.setDuration = function bzq_setDuration(target, t) {
@@ -110,6 +169,7 @@
   BZQuery.prototype._renderResolvedBugs = function() {
     var self = this;
     this.element.find('.resolved_count').html(this.loadingIndicator);
+    this.element.find('.resolved_output').html('');
 
     /* Rendering resolving bugs */
     var resolve = jQuery.extend({}, this.config);
@@ -149,7 +209,9 @@
 
   BZQuery.prototype._renderAssignedBugs = function() {
     var self = this;
+    var deferred = $.Deferred();
     this.element.find('.assigned_count').html(this.loadingIndicator);
+    this.element.find('.assigned_output').html('');
     /* Rendering resolving bugs */
     var assign = jQuery.extend({}, this.config);
     assign['email1'] = this.config.email;

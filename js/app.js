@@ -118,7 +118,7 @@
       name: 'Vincent Chang',
       email: 'vchang@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Edgar',
@@ -130,25 +130,25 @@
       name: 'Aknow',
       email: 'szchen@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Yoshi',
       email: 'allstars.chh@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Jessica',
       email: 'jjong@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Dimi',
       email: 'dlee@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Shao-Hang',
@@ -160,13 +160,13 @@
       name: 'Chuck',
       email: 'chulee@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Gene',
       email: 'gene.lian@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['communications']
     },
     {
       name: 'John(Stone)',
@@ -178,13 +178,13 @@
       name: 'Hsinyi',
       email: 'htsai@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['communications']
     },
     {
       name: 'ChiaHung',
       email: 'ctai@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     /* {
       name: 'Bevis',
@@ -200,19 +200,19 @@
       name: 'Patrick',
       email: 'pwang@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['recording']
     },
     {
       name: 'Vicamo',
       email: 'vyang@mozilla.com',
       team: 'gecko',
-      functional: 'ril'
+      functional: 'telephony'
     },
     {
       name: 'Phoebe',
       email: 'phchang@mozilla.com',
       team: 'gecko',
-      functional: 'media'
+      functional: 'recording'
     },
     {
       name: 'Peter',
@@ -224,19 +224,19 @@
       name: 'Benjamin',
       email: 'bechen@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['recording']
     },
     {
       name: 'SC',
       email: 'schien@mozilla.com',
       team: 'gecko',
-      functional: 'media'
+      functional: ['recording']
     },
     {
       name: 'Steven',
       email: 'slee@mozilla.com',
       team: 'gecko',
-      functional: 'media'
+      functional: ['recording']
     },
     /*{
       name: 'John Lin',
@@ -248,13 +248,13 @@
       name: 'Randy',
       email: 'rlin@mozilla.com',
       team: 'gecko',
-      functional: 'media'
+      functional: ['recording']
     },
     {
       name: 'Shelly',
       email: 'slin@mozilla.com',
       team: 'gecko',
-      functional: 'media'
+      functional: ['recording']
     },
     {
       name: 'Jerry',
@@ -272,37 +272,37 @@
       name: 'JW',
       email: 'jwwang@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['recording']
     },
     {
       name: 'Alfredo',
       email: 'ayang@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['recording']
     },
     {
       name: 'Marco',
       email: 'mchen@mozilla.com',
-      team: 'system',
-      functional: ''
+      team: 'gecko',
+      functional: ['device']
     },
     {
       name: 'Eric',
       email: 'echou@mozilla.com',
-      team: 'system',
-      functional: ''
+      team: 'gecko',
+      functional: ['telephony']
     },
     {
       name: 'Gina',
       email: 'gyeh@mozilla.com',
-      team: 'system',
-      functional: ''
+      team: 'gecko',
+      functional: ['telephony']
     },
     {
       name: 'Ben',
       email: 'btian@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Bruce',
@@ -313,14 +313,14 @@
     {
       name: 'Alan',
       email: 'ahuang@mozilla.com',
-      team: 'system',
+      team: 'gecko',
       functional: ''
     },
     {
       name: 'Shawn',
       email: 'shuang@mozilla.com',
-      team: 'system',
-      functional: ''
+      team: 'gecko',
+      functional: ['telephony']
     },
     {
       name: 'Shawn Ku',
@@ -338,13 +338,13 @@
       name: 'Vincent Liu',
       email: 'vliu@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['device']
     },
     {
       name: 'Viral',
       email: 'vwang@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['device']
     },
     {
       name: 'TingYuan',
@@ -368,7 +368,7 @@
       name: 'CJ',
       email: 'cku@mozilla.com',
       team: 'gecko',
-      functional: 'media'
+      functional: ['recording']
     },
     {
       name: 'Tim',
@@ -428,19 +428,19 @@
       name: 'William',
       email: 'whsu@mozilla.com',
       team: 'qa',
-      functional: ''
+      functional: ['recording']
     },
     {
       name: 'Atsai',
       email: 'atsai@mozilla.com',
       team: 'qa',
-      functional: ''
+      functional: ['performance']
     },
     {
       name: 'Walter',
       email: 'wachen@mozilla.com',
       team: 'qa',
-      functional: ''
+      functional: ['telephony']
     },
     {
       name: 'Askeing',
