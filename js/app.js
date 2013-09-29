@@ -446,13 +446,37 @@
       name: 'Askeing',
       email: 'fyen@mozilla.com',
       team: 'qa',
-      functional: ''
+      functional: ['system-platform']
     },
     {
       name: 'Enpei',
       email: 'echu@mozilla.com',
       team: 'qa',
       functional: ''
+    },
+    {
+      name: 'Joe',
+      email: 'jcheng@mozilla.com',
+      team: 'pm',
+      functional: ['communications', 'recording', 'device']
+    },
+    {
+      name: 'Wayne',
+      email: 'wchang@mozilla.com',
+      team: 'pm',
+      functional: ''
+    },
+    {
+      name: 'Kevin',
+      email: 'khu@mozilla.com',
+      team: 'pm',
+      functional: ['telephony']
+    },
+    {
+      name: 'Ivan',
+      email: 'itsay@mozilla.com',
+      team: 'pm',
+      functional: ['system-platform']
     }
   ];
 

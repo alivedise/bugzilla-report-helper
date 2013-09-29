@@ -2,6 +2,57 @@
   'use strict';
   var _id = 0;
 
+  var Functional = {
+    'free': {
+      icon: '<i class="icon-beaker"></i>',
+      name: 'Free Agent'
+    },
+    'media': {
+      icon: '<span class="glyphicon glyphicon-music"></span>',
+      name: 'Media'
+    },
+    'recording': {
+      icon: '<span class="glyphicon glyphicon-camera"></span>',
+      name: 'Recording/Streaming'
+    },
+    'performance': {
+      icon: '<span class="glyphicon glyphicon-time"></span>',
+      name: 'Performance'
+    },
+    'browser': {
+      icon: '<span class="glyphicon glyphicon-globe"></span>',
+      name: 'Browser'
+    },
+    'system-frontend': {
+      icon: '<span class="glyphicon glyphicon-wrench"></span>',
+      name: 'Recording/Streaming'
+    },
+    'telephony': {
+      icon: '<span class="glyphicon glyphicon-signal"></span>',
+      name: 'Telephony,RIL,BT,Provisioning,CDMA'
+    },
+    'device': {
+      icon: '<span class="glyphicon glyphicon-phone"></span>',
+      name: 'Device'
+    },
+    'nfc': {
+      icon: '<i class="icon-share"></i>',
+      name: 'NFC'
+    },
+    'communications': {
+      icon: '<i class="icon-comments"></i>',
+      name: 'Comms'
+    },
+    'productivity': {
+      icon: '<span class="glyphicon glyphicon-tasks"></span>',
+      name: 'Productivity'
+    },
+    'system-platform': {
+      icon: '<i class="icon-cogs"></i>',
+      name: 'System Platform'
+    }
+  };
+
   var BZQuery = function(settings) {
     this.config = {
       username: 'autonome+bztest@gmail.com',
@@ -71,6 +122,18 @@
   BZQuery.prototype.commented = '';
   BZQuery.prototype.assigned = '';
   BZQuery.prototype.resolved = '';
+
+  BZQuery.prototype.renderTags = function bzq_renderTags() {
+    if (this.functional) {
+      if (!Array.isArray(this.functional)) {
+        this.functional = [ this.functional ];
+      }
+
+      this.functional.forEach(function(team) {
+        this.element.append($('<div class="label label-success label-sm team">' + Functional[team].icon + ' ' + Functional[team].name + '</div>'));
+      }, this);
+    }
+  }
 
   BZQuery.prototype.downloadBugs = function bzq_downloadBugs(config, type, count) {
     var self = this;
@@ -261,6 +324,7 @@
         s: 70
       }));
     var self = this;
+    this.renderTags();
     this.reload();
   };
 

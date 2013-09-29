@@ -16,3 +16,14 @@ img.avatar {
   width: 70px;
   max-width: 70px;
 }
+
+div.bzq {
+  position: relative;
+}
+
+div.bzq .team {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  background-color: black;
+}
