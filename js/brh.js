@@ -2,21 +2,56 @@
   'use strict';
   var _id = 0;
 
-  var BZQuery = function(name, email) {
+  var BZQuery = function(settings) {
+    this.config = {
+      username: 'autonome+bztest@gmail.com',
+      password: 'bztest1A'
+    };
     this._id = _id++;
-    this.config.name = name;
-    this.config.email = email;;
-    this.bugzilla = new BugzillaClient(this.config);
+    for (var k in settings) {
+      this.config[k] = settings[k];
+      this[k] = settings[k];
+    }
+    this.bugzilla = new BugzillaClient(jQuery.extend({}, this.config));
     this.render();
+    BZQuery.manager.push(this);
+    return this;
   };
 
-  BZQuery.prototype.config = {
-    username: 'autonome+bztest@gmail.com',
-    password: 'bztest1A'
+  BZQuery.manager = [];
+
+  BZQuery.prototype.loadingIndicator = '<i class=\'icon-cog icon-spin\'></i>';
+
+  BZQuery.prototype.filter = function bzq_filter(keyword, type) {
+    if (keyword === '' || keyword === 'all') {
+      this.show();
+      return;
+    }
+    if (!type || type !== 'functional') {
+      if (this.team && this.team.search(keyword) === 0) {
+        this.show();
+      } else {
+        this.hide();
+      }
+    } else {
+      if (this.functional && this.functional.search(keyword) === 0) {
+        this.show();
+      } else {
+        this.hide();
+      }
+    }
   };
 
-  BZQuery.prototype.bugs = {};
-  BZQuery.prototype.loading = {};
+  BZQuery.prototype.show = function bzq_show() {
+    console.log('show');
+    this.element.stop().show();
+  };
+
+
+  BZQuery.prototype.hide = function bzq_hide() {
+    console.log('hide');
+    this.element.stop().hide();
+  };
 
   BZQuery.prototype.downloadBugs = function bzq_downloadBugs(config, type, count) {
     var self = this;
@@ -64,7 +99,9 @@
     }
   };
 
-  BZQuery.prototype.reload = function bzq_reload() {
+  BZQuery.prototype.reload = function bzq_reload(config) {
+    this.config = jQuery.extend(this.config, config);
+    
     this._renderResolvedBugs();
     this._renderAssignedBugs();
     this._renderCommentedBugs();
@@ -72,11 +109,14 @@
 
   BZQuery.prototype._renderResolvedBugs = function() {
     var self = this;
+    this.element.find('.resolved_count').html(this.loadingIndicator);
+
     /* Rendering resolving bugs */
     var resolve = jQuery.extend({}, this.config);
     resolve['email1'] = this.config.email;
     resolve['email1_assigned_to'] = 1;
-    resolve['changed_after'] = moment().utc().day(-75).format('YYYY-MM-DD');
+    resolve['changed_after'] = this.config.start;
+    resolve['changed_before'] = this.config.end;
     resolve['changed_field'] = 'status';
     resolve['changed_field_to'] = 'RESOLVED';
     this.bugzilla.searchBugs(resolve, function(error, bugs) {
@@ -109,6 +149,7 @@
 
   BZQuery.prototype._renderAssignedBugs = function() {
     var self = this;
+    this.element.find('.assigned_count').html(this.loadingIndicator);
     /* Rendering resolving bugs */
     var assign = jQuery.extend({}, this.config);
     assign['email1'] = this.config.email;
@@ -163,12 +204,14 @@
 
   BZQuery.prototype._renderCommentedBugs = function() {
     var self = this;
+    this.element.find('.commented_count').html(this.loadingIndicator);
     /* Rendering commented bugs */
     var comment = jQuery.extend({}, this.config);
     comment['email1'] = this.config.email;
     comment['email1_type'] = 'exact';
     comment['email1_comment_creator'] = 1;
-    comment['changed_after'] = moment().utc().day(-75).format('YYYY-MM-DD');
+    comment['changed_after'] = this.config.start;
+    comment['changed_before'] = this.config.end;
     this.element.find('.commented_more').hide();
     this.element.find('.commented_output').hide();
 
@@ -192,7 +235,7 @@
     });
   };
 
-  BZQuery.prototype.containerElement = $('#container');
+  BZQuery.prototype.containerElement = $('#all');
 
   BZQuery.prototype.formatBug = function bzq_formatBug(bug, mine_flag) {
     var item = '<li id="bug_' + bug.id;

@@ -1,128 +1,190 @@
- (function(window) {
+(function(window) {
   var MozillaTaiwan = [
     {
       name: 'Alive',
-      email: 'alive@mozilla.com'
+      email: 'alive@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'free'
     },
     {
       name: 'Yuren',
-      email: 'yurenju.mozilla@gmail.com'
+      email: 'yurenju.mozilla@gmail.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'Arthur',
-      email: 'arthur.chen@mozilla.com'
+      email: 'arthur.chen@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'Gary',
-      email: 'gchen@mozilla.com'
+      email: 'gchen@mozilla.com',
+      team: 'gaia:device',
+      functional: 'system-platform'
     },
     {
       name: 'John',
-      email: 'johu@mozilla.com'
+      email: 'johu@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'media'
     },
     {
       name: 'Dominic',
-      email: 'dkuo@mozilla.com'
+      email: 'dkuo@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'media'
     },
     {
       name: 'George',
-      email: 'gduan@mozilla.com'
+      email: 'gduan@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'Ian',
-      email: 'iliu@mozilla.com'
+      email: 'iliu@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'productivity'
     },
     {
       name: 'Steve',
-      email: 'schung@mozilla.com'
+      email: 'schung@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'communications'
     },
     {
       name: 'Rex',
-      email: 'rexboy@mozilla.com'
+      email: 'rexboy@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'communications'
     },
     {
       name: 'Evan',
-      email: 'evanxd@mozilla.com'
+      email: 'evanxd@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'productivity'
     },
     {
       name: 'Rudy',
-      email: 'rlu@mozilla.com'
+      email: 'rlu@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'Fred',
-      email: 'gasolin@mozilla.com'
+      email: 'gasolin@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'EJ',
-      email: 'ejchen@mozilla.com'
+      email: 'ejchen@mozilla.com',
+      team: 'gaia:platform',
+      functional: ''
     },
     {
       name: 'Luke',
-      email: 'lchang@mozilla.com'
+      email: 'lchang@mozilla.com',
+      team: 'gaia:device',
+      functional: ''
     },
     {
       name: 'dwi2',
-      email: 'thuang@mozilla.com'
+      email: 'thuang@mozilla.com',
+      team: 'gaia:device',
+      functional: ''
     },
     {
       name: 'Greg',
-      email: 'gweng@mozilla.com'
+      email: 'gweng@mozilla.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'Kanru',
-      email: 'kchen@mozilla.com'
+      email: 'kchen@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Henry',
-      email: 'hchang@mozilla.com'
+      email: 'hchang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Vincent Chang',
-      email: 'vchang@mozilla.com'
+      email: 'vchang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Edgar',
-      email: 'echen@mozilla.com'
+      email: 'echen@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Aknow',
-      email: 'szchen@mozilla.com'
+      email: 'szchen@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Yoshi',
-      email: 'allstars.chh@mozilla.com'
+      email: 'allstars.chh@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Jessica',
-      email: 'jjong@mozilla.com'
+      email: 'jjong@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Dimi',
-      email: 'dlee@mozilla.com'
+      email: 'dlee@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Shao-Hang',
-      email: 'skao@mozilla.com'
+      email: 'skao@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Chuck',
-      email: 'chulee@mozilla.com'
+      email: 'chulee@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Gene',
-      email: 'gene.lian@mozilla.com'
+      email: 'gene.lian@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'John(Stone)',
-      email: 'jshih@mozilla.com'
+      email: 'jshih@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Hsinyi',
-      email: 'htsai@mozilla.com'
+      email: 'htsai@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'ChiaHung',
-      email: 'ctai@mozilla.com'
+      email: 'ctai@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     /* {
       name: 'Bevis',
@@ -130,145 +192,318 @@
     }, */
     {
       name: 'Georgia',
-      email: 'gwang@mozilla.com'
+      email: 'gwang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Patrick',
-      email: 'pwang@mozilla.com'
+      email: 'pwang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Vicamo',
-      email: 'vyang@mozilla.com'
+      email: 'vyang@mozilla.com',
+      team: 'gecko',
+      functional: 'ril'
     },
     {
       name: 'Phoebe',
-      email: 'phchang@mozilla.com'
+      email: 'phchang@mozilla.com',
+      team: 'gecko',
+      functional: 'media'
     },
     {
       name: 'Peter',
-      email: 'pchang@mozilla.com'
+      email: 'pchang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Benjamin',
-      email: 'bechen@mozilla.com'
+      email: 'bechen@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'SC',
-      email: 'schien@mozilla.com'
+      email: 'schien@mozilla.com',
+      team: 'gecko',
+      functional: 'media'
     },
     {
       name: 'Steven',
-      email: 'slee@mozilla.com'
+      email: 'slee@mozilla.com',
+      team: 'gecko',
+      functional: 'media'
     },
     /*{
       name: 'John Lin',
-      email: 'jolin@mozilla.com'
+      email: 'jolin@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },*/
     {
       name: 'Randy',
-      email: 'rlin@mozilla.com'
+      email: 'rlin@mozilla.com',
+      team: 'gecko',
+      functional: 'media'
     },
     {
       name: 'Shelly',
-      email: 'slin@mozilla.com'
+      email: 'slin@mozilla.com',
+      team: 'gecko',
+      functional: 'media'
     },
     {
       name: 'Jerry',
-      email: 'hshih@mozilla.com'
+      email: 'hshih@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Morris',
-      email: 'mtseng@mozilla.com'
+      email: 'mtseng@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'JW',
-      email: 'jwwang@mozilla.com'
+      email: 'jwwang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Alfredo',
-      email: 'ayang@mozilla.com'
+      email: 'ayang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Marco',
-      email: 'mchen@mozilla.com'
+      email: 'mchen@mozilla.com',
+      team: 'system',
+      functional: ''
     },
     {
       name: 'Eric',
-      email: 'echou@mozilla.com'
+      email: 'echou@mozilla.com',
+      team: 'system',
+      functional: ''
     },
     {
       name: 'Gina',
-      email: 'gyeh@mozilla.com'
+      email: 'gyeh@mozilla.com',
+      team: 'system',
+      functional: ''
     },
     {
       name: 'Ben',
-      email: 'btian@mozilla.com'
+      email: 'btian@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Bruce',
-      email: 'brsun@mozilla.com'
+      email: 'brsun@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Alan',
-      email: 'ahuang@mozilla.com'
+      email: 'ahuang@mozilla.com',
+      team: 'system',
+      functional: ''
     },
     {
       name: 'Shawn',
-      email: 'shuang@mozilla.com'
+      email: 'shuang@mozilla.com',
+      team: 'system',
+      functional: ''
     },
     {
       name: 'Shawn Ku',
-      email: 'sku@mozilla.com'
+      email: 'sku@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Vincent Lin',
-      email: 'vlin@mozilla.com'
+      email: 'vlin@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Vincent Liu',
-      email: 'vliu@mozilla.com'
+      email: 'vliu@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Viral',
-      email: 'vwang@mozilla.com'
+      email: 'vwang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'TingYuan',
-      email: 'thuang@mozilla.com'
+      email: 'thuang@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Thinker',
-      email: 'tlee@mozilla.com'
+      email: 'tlee@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'Cervantes',
-      email: 'cyu@mozilla.com'
+      email: 'cyu@mozilla.com',
+      team: 'gecko',
+      functional: ''
     },
     {
       name: 'CJ',
-      email: 'cku@mozilla.com'
+      email: 'cku@mozilla.com',
+      team: 'gecko',
+      functional: 'media'
     },
     {
       name: 'Tim',
-      email: 'timdream@gmail.com'
+      email: 'timdream@gmail.com',
+      team: 'gaia:platform',
+      functional: 'system-platform'
     },
     {
       name: 'Evelyn',
-      email: 'ehung@mozilla.com'
+      email: 'ehung@mozilla.com',
+      team: 'gaia:device',
+      functional: ''
+    },
+    {
+      name: 'Mike',
+      email: 'mtsai@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Pecko',
+      email: 'pchen@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Neo',
+      email: 'nhsieh@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Helen',
+      email: 'hhuang@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Juwei',
+      email: 'jhuang@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Fang',
+      email: 'fshih@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Carrie',
+      email: 'cawang@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'William',
+      email: 'whsu@mozilla.com',
+      team: 'qa',
+      functional: ''
+    },
+    {
+      name: 'Atsai',
+      email: 'atsai@mozilla.com',
+      team: 'qa',
+      functional: ''
+    },
+    {
+      name: 'Walter',
+      email: 'wachen@mozilla.com',
+      team: 'qa',
+      functional: ''
+    },
+    {
+      name: 'Askeing',
+      email: 'fyen@mozilla.com',
+      team: 'qa',
+      functional: ''
+    },
+    {
+      name: 'Enpei',
+      email: 'echu@mozilla.com',
+      team: 'qa',
+      functional: ''
     }
   ];
 
-  var PeopleList = [];
+  var App = {
+    config: {
+      start: '2013-07-15',
+      end: moment().format('YYYY-MM-DD')
+    },
 
-  MozillaTaiwan.forEach(function(person) {
-    PeopleList.push(new BZQuery(person.name, person.email));
-    return false;
-  });
+    init: function app_init() {
+      this._bindEvents();
+      MozillaTaiwan.forEach(function(person) {
+        new BZQuery(jQuery.extend({
+          start: this.config.start,
+          end: this.config.end
+        }, person));
+      }, this);
+    },
 
-  $('#reload').click(function() {
-    PeopleList.forEach(function(person) {
-      person.reload();
-    });
-  });
+    _bindEvents: function app__bindEvents() {
+      var self = this;
+      /* Date Picker */
+      $('#dp').datepicker({
+         format: "yyyy-mm-dd",
+         autoclose: true
+      }).on('changeDate', function(evt){
+        if (evt.target.name == 'start') {
+          self.config.start = evt.format('yyyy-mm-dd');
+        } else if (evt.target.name == 'end') {
+          self.config.end = evt.format('yyyy-mm-dd');
+        }
+
+        BZQuery.manager.forEach(function(person) {
+          person.reload(self.config);
+        });
+      });
+
+      /* Tab */
+      $('#brh-tab').tab();
+      $('#brh-tab a').click(function (evt) {
+        var team = $(this).prop('href').split('#')[1];
+        var type = $(this).data('type');
+        evt.preventDefault();
+        $(this).tab('show');
+        BZQuery.manager.forEach(function(person) {
+          person.filter(team, type);
+        });
+      });
+    }
+  };
+
+  App.init();
 
 }(this));

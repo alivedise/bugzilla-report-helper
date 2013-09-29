@@ -24,16 +24,23 @@
     <script src='js/bz.js'></script>
     <script src='js/moment.js'></script>
     <script src='js/md5.min.js'></script>
+    <script src='js/bootstrap-datepicker.js'></script>
     <script type="text/javascript" src="js/bootstrap-progressbar.min.js"></script>
-    <script defer src='js/brh.js?r=1.0.3'></script>
-    <script defer src='js/app.js?r=1.0.3'></script>
-    <link rel="stylesheet" href="style/main.css?r=1.0.3" />
+    <script defer src='js/brh.js?r=1.0.6'></script>
+    <script defer src='js/app.js?r=1.0.6'></script>
+    <link rel="stylesheet" href="style/datepicker.css" />
+    <link rel="stylesheet" href="style/main.css?r=1.0.6" />
   </head>
   <body>
     <div class="container">
-      <h2>Bugzilla Report Helper Q3[2013-7-15 ~ 2013-9/30]</h2>
-      <em>by alive@mozilla.com</em>
-      <span class="label label-info pull-right">V1.0.3</span>
+      <h2>Bugzilla Report Helper</h2>
+      <span class="input-daterange" id="dp">
+        <input type="text" class="input-small" name="start" value="2013-07-15" />
+        <span class="add-on">to</span>
+        <input type="text" class="input-small" name="end" value="2013-09-30" />
+      </span>
+      <span class="label label-info pull-right">V1.0.5</span>
+      <em class="pull-right">by alive@mozilla.com</em>
       <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <ul class="list-unstyled">
@@ -42,8 +49,21 @@
           <li>When loading completed, click on <i class="icon-download-alt resolved_more"></i> to view bugs details.</li>
         </ul>
       </div>
-      <div id="container">
-      </div>
+      <ul class="nav nav-pills" id="brh-tab">
+        <li class="active"><a href="#all">All</a></li>
+        <li><a href="#gaia">Gaia</a></li>
+        <li><a href="#qa">QA</a></li>
+        <li><a href="#gecko">platform</a></li>
+        <li><a href="#ux">UX</a></li>
+        <li><a href="#system">system</a></li>
+        <li><a href="#media" data-type="functional">Functional:Media</a></li>
+        <li><a href="#system-platform" data-type="functional">Functional:System Platform</a></li>
+        <li><a href="#productivity" data-type="functional">Functional:Productivity</a></li>
+        <li><a href="#ril" data-type="functional">Functional:RIL</a></li>
+        <li><a href="#network" data-type="functional">Functional:Network</a></li>
+        <li><a href="#free" data-type="functional">Functional:Free</a></li>
+      </ul>
+      <div id="all"></div>
     </div>
 
     <div class="template col-sm-6 col-md-4" id="person-template">
