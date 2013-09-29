@@ -168,7 +168,7 @@
     comment['email1'] = this.config.email;
     comment['email1_type'] = 'exact';
     comment['email1_comment_creator'] = 1;
-    comment['changed_after'] = moment().utc().day(-1).format('YYYY-MM-DD');
+    comment['changed_after'] = moment().utc().day(-75).format('YYYY-MM-DD');
     this.element.find('.commented_more').hide();
     this.element.find('.commented_output').hide();
 
