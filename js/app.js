@@ -92,7 +92,7 @@
     },
     {
       name: 'dwi2',
-      email: 'thuang@mozilla.com',
+      email: 'tzhuang@mozilla.com',
       team: 'gaia:device',
       functional: ''
     },
