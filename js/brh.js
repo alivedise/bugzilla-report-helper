@@ -72,6 +72,7 @@
   BZQuery.manager = [];
 
   BZQuery.prototype.loadingIndicator = '<i class="icon-cog icon-spin"></i>';
+  BZQuery.prototype.ignoreIndicator = '<i class="icon-ban-circle"></i>';
   BZQuery.prototype.progressingIndicator =
     '<div class="progress active progress-striped">' +
       '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuetransitiongoal="100">' +
@@ -223,16 +224,31 @@
 
   BZQuery.prototype.reload = function bzq_reload(config) {
     this.config = jQuery.extend(this.config, config);
-    
-    this._renderResolvedBugs();
-    this._renderAssignedBugs();
+
+    if (this.team == 'pm' ||
+        this.team == 'qa' ||
+        this.team == 'ux') {
+      this._renderResolvedBugs(true);
+      this._renderAssignedBugs(true);
+    } else {
+      this._renderResolvedBugs();
+      this._renderAssignedBugs();
+    }
+
+
     this._renderCommentedBugs();
   };
 
-  BZQuery.prototype._renderResolvedBugs = function() {
+  BZQuery.prototype._renderResolvedBugs = function(ignore) {
     var self = this;
-    this.element.find('.resolved_count').html(this.loadingIndicator);
     this.element.find('.resolved_output').html('');
+
+    if (ignore) {
+      this.element.find('.resolved_count').html(this.ignoreIndicator);
+      return;
+    } else {
+      this.element.find('.resolved_count').html(this.loadingIndicator);
+    }
 
     /* Rendering resolving bugs */
     var resolve = jQuery.extend({}, this.config);
@@ -270,9 +286,16 @@
     });
   };
 
-  BZQuery.prototype._renderAssignedBugs = function() {
+  BZQuery.prototype._renderAssignedBugs = function(ignore) {
     var self = this;
-    var deferred = $.Deferred();
+
+    if (ignore) {
+      this.element.find('.assigned_count').html(this.ignoreIndicator);
+      return;
+    } else {
+      this.element.find('.assigned_count').html(this.loadingIndicator);
+    }
+
     this.element.find('.assigned_count').html(this.loadingIndicator);
     this.element.find('.assigned_output').html('');
     /* Rendering resolving bugs */
@@ -311,6 +334,9 @@
   BZQuery.prototype.render = function bzq_render() {
     this.containerElement.append($('#person-template').clone().prop('id', 'bqz' + this._id).removeClass('template'));
     this.element = $('#bqz' + this._id);
+    this.resolveArea = this.element.find('.resolved');
+    this.assignArea = this.element.find('.assigned');
+    this.commentArea = this.element.find('.commented');
     this.element.show();
     this.element.find('.name').html(this.config.name);
     this.element.find('.role').html(this.team.toUpperCase());

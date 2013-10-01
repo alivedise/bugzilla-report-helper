@@ -365,6 +365,18 @@
       functional: ''
     },
     {
+      name: 'Ken',
+      email: 'kchang@mozilla.com',
+      team: 'gecko',
+      functional: ''
+    },
+    {
+      name: 'Ethan',
+      email: 'ettseng@mozilla.com',
+      team: 'gecko',
+      functional: ''
+    },
+    {
       name: 'CJ',
       email: 'cku@mozilla.com',
       team: 'gecko',
