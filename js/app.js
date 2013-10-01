@@ -57,13 +57,13 @@
     {
       name: 'Dave',
       email: 'dhylands@mozilla.com',
-      team: 'gaia',
+      team: 'gecko',
       functional: ''
     },
     {
       name: 'Mike H',
       email: 'mhabicher@mozilla.com',
-      team: 'gaia',
+      team: '',
       functional: ''
     },
     {
@@ -76,7 +76,7 @@
     {
       name: 'James P',
       email: 'squibblyflabbetydoo@gmail.com',
-      team: 'gaia',
+      team: '',
       functional: 'media'
     },
     {
@@ -142,7 +142,7 @@
     {
       name: 'Dylan Oliver',
       email: 'doliver@mozilla.com',
-      team: 'pm',
+      team: 'em',
       functional: 'productivity'
     },
     {
@@ -214,7 +214,7 @@
     {
       name: 'Gabriel S',
       email: 'gsvelto@mozilla.com',
-      team: 'gaia',
+      team: '',
       functional: ['communications']
     },
     {
@@ -226,13 +226,13 @@
     {
       name: 'Kyle M',
       email: 'kyle@nonpolynomial.com',
-      team: 'gecko',
+      team: '',
       functional: ['system-frontend']
     },
     {
       name: 'Reuben M',
       email: 'reuben.bmo@gmail.com',
-      team: 'gecko',
+      team: '',
       functional: ['system-frontend']
     },
     {
@@ -560,19 +560,19 @@
     {
       name: 'CJ',
       email: 'cku@mozilla.com',
-      team: 'gecko',
+      team: 'em',
       functional: ['recording']
     },
     {
       name: 'Tim',
       email: 'timdream@gmail.com',
-      team: 'gaia:platform',
+      team: 'em',
       functional: 'system-platform'
     },
     {
       name: 'Evelyn',
       email: 'ehung@mozilla.com',
-      team: 'gaia:device',
+      team: 'em',
       functional: ''
     },
     {
