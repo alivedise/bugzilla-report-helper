@@ -17,6 +17,15 @@ img.avatar {
   max-width: 70px;
 }
 
+.assigned_more,
+.assigned_hide,
+.commented_more,
+.commented_hide,
+.resolved_more,
+.resolved_hide {
+  cursor: pointer;
+}
+
 div.bzq {
   position: relative;
 }

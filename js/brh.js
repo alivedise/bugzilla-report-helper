@@ -11,6 +11,10 @@
       icon: '<span class="glyphicon glyphicon-music"></span>',
       name: 'Media'
     },
+    'bluetooth': {
+      icon: '',
+      name: 'Bluetooth'
+    },
     'recording': {
       icon: '<span class="glyphicon glyphicon-camera"></span>',
       name: 'Recording/Streaming'
@@ -25,7 +29,7 @@
     },
     'system-frontend': {
       icon: '<span class="glyphicon glyphicon-wrench"></span>',
-      name: 'Recording/Streaming'
+      name: 'System Frontend'
     },
     'telephony': {
       icon: '<span class="glyphicon glyphicon-signal"></span>',
@@ -109,16 +113,24 @@
     }
   };
 
+  BZQuery.prototype.visibilityState = 'foreground';
+
   BZQuery.prototype.show = function bzq_show() {
-    console.log('show');
     this.element.stop().show();
+    this.visibilityState = 'foreground';
+    if (this._unloaded) {
+      this._unloaded = false;
+      this.reload();
+    }
   };
 
 
   BZQuery.prototype.hide = function bzq_hide() {
-    console.log('hide');
     this.element.stop().hide();
+    this.visibilityState = 'background';
   };
+
+  BZQuery.prototype._unloaded = true;
 
   BZQuery.prototype.commented = '';
   BZQuery.prototype.assigned = '';
@@ -352,7 +364,6 @@
       }));
     var self = this;
     this.renderTags();
-    this.reload();
   };
 
   BZQuery.prototype._renderCommentedBugs = function() {

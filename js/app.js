@@ -37,6 +37,55 @@
       functional: 'media'
     },
     {
+      name: 'Dietrich',
+      email: 'dietrich@mozilla.com',
+      team: 'pm',
+      functional: 'media'
+    },
+    {
+      name: 'Patryk',
+      email: 'padamczyk@mozilla.com',
+      team: 'ux',
+      functional: 'media'
+    },
+    {
+      name: 'FxOS UX',
+      email: 'firefoxos-ux-bugzilla@mozilla.com',
+      team: 'ux',
+      functional: ''
+    },
+    {
+      name: 'Dave',
+      email: 'dhylands@mozilla.com',
+      team: 'gaia',
+      functional: ''
+    },
+    {
+      name: 'Mike H',
+      email: 'mhabicher@mozilla.com',
+      team: 'gaia',
+      functional: ''
+    },
+    {
+      name: 'David F',
+      email: 'dflanagan@mozilla.com',
+      team: 'gaia',
+      functional: 'media',
+      tags: ['god']
+    },
+    {
+      name: 'James P',
+      email: 'squibblyflabbetydoo@gmail.com',
+      team: 'gaia',
+      functional: 'media'
+    },
+    {
+      name: 'Sotaro',
+      email: 'sotaro.ikeda.g@gmail.com',
+      team: 'gecko',
+      functional: 'media'
+    },
+    {
       name: 'George',
       email: 'gduan@mozilla.com',
       team: 'gaia',
@@ -45,6 +94,84 @@
     {
       name: 'Ian',
       email: 'iliu@mozilla.com',
+      team: 'gaia',
+      functional: 'productivity'
+    },
+    {
+      name: 'Adam Rogers',
+      email: 'arogers@mozilla.com',
+      team: 'pm',
+      functional: 'productivity'
+    },
+    {
+      name: 'Candice',
+      email: 'cserran@mozilla.com',
+      team: 'pm',
+      functional: ['system-frontend', 'productivity', 'browser']
+    },
+    {
+      name: 'Naoki',
+      email: 'nhirata.bugzilla@gmail.com',
+      team: 'qa',
+      functional: ['browser']
+    },
+    {
+      name: 'Ben Francis',
+      email: 'bfrancis@mozilla.com',
+      team: 'gaia',
+      functional: ['browser']
+    },
+    {
+      name: 'Dale',
+      email: 'dale@arandomurl.com',
+      team: 'gaia',
+      functional: ['browser']
+    },
+    {
+      name: 'Rob Macdonald',
+      email: 'rmacdonald@mozilla.com',
+      team: 'ux',
+      functional: ['productivity', 'media']
+    },
+    {
+      name: 'Przemek',
+      email: 'pabratowski@mozilla.com',
+      team: 'pm',
+      functional: 'productivity'
+    },
+    {
+      name: 'Dylan Oliver',
+      email: 'doliver@mozilla.com',
+      team: 'pm',
+      functional: 'productivity'
+    },
+    {
+      name: 'James Lal',
+      email: 'jlal@mozilla.com',
+      team: 'gaia',
+      functional: 'productivity'
+    },
+    {
+      name: 'Andrew S',
+      email: 'bugmail@asutherland.org',
+      team: 'gaia',
+      functional: 'productivity'
+    },
+    {
+      name: 'Gareth A',
+      email: 'gaye@mozilla.com',
+      team: 'gaia',
+      functional: 'productivity'
+    },
+    {
+      name: 'James Burke',
+      email: 'jrburke@gmail.com',
+      team: 'gaia',
+      functional: 'productivity'
+    },
+    {
+      name: 'Marcus',
+      email: 'mcav@mozilla.com',
       team: 'gaia',
       functional: 'productivity'
     },
@@ -59,6 +186,54 @@
       email: 'rexboy@mozilla.com',
       team: 'gaia',
       functional: 'communications'
+    },
+    {
+      name: 'Etienne',
+      email: 'etienne@segonzac.info',
+      team: 'gaia',
+      functional: 'communications'
+    },
+    {
+      name: 'Julien',
+      email: 'felash@gmail.com',
+      team: 'gaia',
+      functional: ['communications']
+    },
+    {
+      name: 'Anthony',
+      email: 'anthony@ricaud.me',
+      team: 'gaia',
+      functional: ['communications']
+    },
+    {
+      name: 'Michal B',
+      email: 'mbudzynski@mozilla.com',
+      team: 'gaia',
+      functional: ['communications']
+    },
+    {
+      name: 'Gabriel S',
+      email: 'gsvelto@mozilla.com',
+      team: 'gaia',
+      functional: ['communications']
+    },
+    {
+      name: 'Gregor W',
+      email: 'anygregor@gmail.com',
+      team: 'gecko',
+      functional: ['system-frontend']
+    },
+    {
+      name: 'Kyle M',
+      email: 'kyle@nonpolynomial.com',
+      team: 'gecko',
+      functional: ['system-frontend']
+    },
+    {
+      name: 'Reuben M',
+      email: 'reuben.bmo@gmail.com',
+      team: 'gecko',
+      functional: ['system-frontend']
     },
     {
       name: 'Evan',
@@ -147,6 +322,12 @@
     {
       name: 'Dimi',
       email: 'dlee@mozilla.com',
+      team: 'gecko',
+      functional: ['telephony']
+    },
+    {
+      name: 'Thomas Z',
+      email: 'tzimmermann@mozilla.com',
       team: 'gecko',
       functional: ['telephony']
     },
@@ -290,7 +471,7 @@
       name: 'Eric',
       email: 'echou@mozilla.com',
       team: 'gecko',
-      functional: ['telephony']
+      functional: ['telephony', 'bluetooth']
     },
     {
       name: 'Gina',
@@ -368,7 +549,7 @@
       name: 'Ken',
       email: 'kchang@mozilla.com',
       team: 'gecko',
-      functional: ''
+      functional: ['nfc']
     },
     {
       name: 'Ethan',
@@ -440,13 +621,25 @@
       name: 'William',
       email: 'whsu@mozilla.com',
       team: 'qa',
-      functional: ['recording']
+      functional: ['recording', 'productivity']
     },
     {
       name: 'Atsai',
       email: 'atsai@mozilla.com',
       team: 'qa',
       functional: ['performance']
+    },
+    {
+      name: 'Kevin Grandon',
+      email: 'kgrandon@mozilla.com',
+      team: 'gaia',
+      functional: ['performance']
+    },
+    {
+      name: 'Chris',
+      email: 'clee@mozilla.com',
+      team: 'pm',
+      functional: ['browser']
     },
     {
       name: 'Walter',
@@ -458,6 +651,12 @@
       name: 'Askeing',
       email: 'fyen@mozilla.com',
       team: 'qa',
+      functional: ['system-platform']
+    },
+    {
+      name: 'Paul Theriault',
+      email: 'ptheriault@mozilla.com',
+      team: 'gecko',
       functional: ['system-platform']
     },
     {
@@ -479,10 +678,10 @@
       functional: ''
     },
     {
-      name: 'Kevin',
+      name: 'Kevin Hu',
       email: 'khu@mozilla.com',
       team: 'pm',
-      functional: ['telephony']
+      functional: ['telephony', 'bluetooth']
     },
     {
       name: 'Ivan',
@@ -506,7 +705,7 @@
       name: 'Francis Lee ',
       email: 'frlee@mozilla.com',
       team: 'pm',
-      functional: ''
+      functional: ['nfc']
     }
   ];
 
@@ -524,10 +723,39 @@
           end: this.config.end
         }, person));
       }, this);
+
+      this.parseURL();
+    },
+
+    filter: function(filter, type) {
+      BZQuery.manager.sort(function(a, b) {
+        if (a.visibilityState == 'background' &&
+            b.visibilityState == 'foreground') {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+      BZQuery.manager.forEach(function(person) {
+        person.filter(filter, type);
+      });
     },
 
     _bindEvents: function app__bindEvents() {
       var self = this;
+      /* hash change */
+      window.onhashchange = function() {
+        var type = '';
+        switch (location.hash) {
+          case '#':
+          case '':
+            break;
+          default:
+            self.parseURL();
+          break;
+        }
+      };
+
       /* Date Picker */
       $('#dp').datepicker({
          format: "yyyy-mm-dd",
@@ -539,22 +767,46 @@
           self.config.end = evt.format('yyyy-mm-dd');
         }
 
+        BZQuery.manager.sort(function(a, b) {
+          if (a.visibilityState == 'background' &&
+              b.visibilityState == 'foreground') {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
+
         BZQuery.manager.forEach(function(person) {
           person.reload(self.config);
         });
       });
 
       /* Tab */
-      $('#brh-tab').tab();
+      this.tab = $('#brh-tab').tab();
       $('#brh-tab a').click(function (evt) {
         var team = $(this).prop('href').split('#')[1];
         var type = $(this).data('type');
         evt.preventDefault();
         $(this).tab('show');
-        BZQuery.manager.forEach(function(person) {
-          person.filter(team, type);
-        });
+        if (type) {
+          window.location.hash = '#' + team + ':' + type;
+        } else {
+          window.location.hash = '#' + team;
+        }
       });
+    },
+
+    parseURL: function app_parseURL() {
+      if (location.hash) {
+        var s = location.hash.split(':');
+        var type = s.length > 1 ? 
+                    s[1] : '';
+
+        this.tab.find('[href="' + s[0] + '"]').tab('show');
+        var filter = s[0].replace('#', '');
+        this.filter(filter, type);
+      } else {
+      }
     }
   };
 
