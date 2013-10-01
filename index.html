@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8'>
-    <title>Bugzilla Report Helper</title>
+    <title>FxOS Bugzilla Report Helper</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name='description' content='Bugzilla monitor by gasolin'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,20 +26,20 @@
     <script src='js/md5.min.js'></script>
     <script src='js/bootstrap-datepicker.js'></script>
     <script type="text/javascript" src="js/bootstrap-progressbar.min.js"></script>
-    <script defer src='js/brh.js?r=1.0.10'></script>
-    <script defer src='js/app.js?r=1.0.10'></script>
+    <script defer src='js/brh.js?r=1.0.11'></script>
+    <script defer src='js/app.js?r=1.0.11'></script>
     <link rel="stylesheet" href="style/datepicker.css" />
-    <link rel="stylesheet" href="style/main.css?r=1.0.10" />
+    <link rel="stylesheet" href="style/main.css?r=1.0.11" />
   </head>
   <body>
     <div class="container">
-      <h2>Bugzilla Report Helper</h2>
+      <h2>FxOS Bugzilla Report Helper</h2>
       <span class="input-daterange" id="dp">
         <input type="text" class="input-small" name="start" value="2013-07-15" />
         <span class="add-on">to</span>
         <input type="text" class="input-small" name="end" value="2013-09-30" />
       </span>
-      <span class="label label-info pull-right">V1.0.10</span>
+      <span class="label label-info pull-right">V1.0.11</span>
       <em class="pull-right">by alive@mozilla.com</em>
       <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -76,6 +76,7 @@
       <div class="thumbnail well">
         <img class="avatar pull-right"></img>
         <div><h2 class="name"></h2> <h5 class="email pull-right hidden"></h5></div>
+        <div class="label role label-info"></div>
         <ul class="nav">
           <div class="resolved">
             <span class="resolved_count"><i class='icon-cog icon-spin'></i></span> <span class="glyphicon glyphicon-ok"></span> Resolved  

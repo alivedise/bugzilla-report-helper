@@ -3,103 +3,103 @@
     {
       name: 'Alive',
       email: 'alive@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'free'
     },
     {
       name: 'Yuren',
       email: 'yurenju.mozilla@gmail.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {
       name: 'Arthur',
       email: 'arthur.chen@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {
       name: 'Gary',
       email: 'gchen@mozilla.com',
-      team: 'gaia:device',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {
       name: 'John',
       email: 'johu@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'media'
     },
     {
       name: 'Dominic',
       email: 'dkuo@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'media'
     },
     {
       name: 'George',
       email: 'gduan@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {
       name: 'Ian',
       email: 'iliu@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'productivity'
     },
     {
       name: 'Steve',
       email: 'schung@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'communications'
     },
     {
       name: 'Rex',
       email: 'rexboy@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'communications'
     },
     {
       name: 'Evan',
       email: 'evanxd@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'productivity'
     },
     {
       name: 'Rudy',
       email: 'rlu@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {
       name: 'Fred',
       email: 'gasolin@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {
       name: 'EJ',
       email: 'ejchen@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: ''
     },
     {
       name: 'Luke',
       email: 'lchang@mozilla.com',
-      team: 'gaia:device',
+      team: 'gaia',
       functional: ''
     },
     {
       name: 'dwi2',
       email: 'tzhuang@mozilla.com',
-      team: 'gaia:device',
+      team: 'gaia',
       functional: ''
     },
     {
       name: 'Greg',
       email: 'gweng@mozilla.com',
-      team: 'gaia:platform',
+      team: 'gaia',
       functional: 'system-platform'
     },
     {

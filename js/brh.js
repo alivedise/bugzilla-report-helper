@@ -313,6 +313,7 @@
     this.element = $('#bqz' + this._id);
     this.element.show();
     this.element.find('.name').html(this.config.name);
+    this.element.find('.role').html(this.team.toUpperCase());
     this.element.find('.email').html(this.config.email);
     this.element.find('.resolved_hide').hide();
     this.element.find('.assigned_hide').hide();
