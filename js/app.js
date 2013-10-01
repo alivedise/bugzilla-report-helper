@@ -91,7 +91,7 @@
       functional: ''
     },
     {
-      name: 'dwi2',
+      name: 'Tzu-Lin',
       email: 'tzhuang@mozilla.com',
       team: 'gaia',
       functional: ''
@@ -477,6 +477,24 @@
       email: 'itsay@mozilla.com',
       team: 'pm',
       functional: ['system-platform']
+    },
+    {
+      name: 'Bruce Huang',
+      email: 'bhuang@mozilla.com',
+      team: 'pm',
+      functional: ''
+    },
+    {
+      name: 'Steven Yang',
+      email: 'styang@mozilla.com',
+      team: 'pm',
+      functional: ''
+    },
+    {
+      name: 'Francis Lee ',
+      email: 'frlee@mozilla.com',
+      team: 'pm',
+      functional: ''
     }
   ];
 
