@@ -7,6 +7,12 @@
       functional: 'free'
     },
     {
+      name: 'Vivien',
+      email: '21@vingtetun.org',
+      team: 'gaia',
+      functional: 'free'
+    },
+    {
       name: 'Yuren',
       email: 'yurenju.mozilla@gmail.com',
       team: 'gaia',
