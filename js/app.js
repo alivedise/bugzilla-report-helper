@@ -717,7 +717,7 @@
 
   var App = {
     config: {
-      start: '2013-07-15',
+      start: moment().day(-14).format('YYYY-MM-DD'),
       end: moment().format('YYYY-MM-DD')
     },
 
@@ -761,6 +761,9 @@
           break;
         }
       };
+
+      $('#start').val(this.config.start);
+      $('#end').val(this.config.end);
 
       /* Date Picker */
       $('#dp').datepicker({
