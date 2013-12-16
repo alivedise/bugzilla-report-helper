@@ -717,7 +717,7 @@
 
   var App = {
     config: {
-      start: moment().day(-14).format('YYYY-MM-DD'),
+      start: '2013-10-01',
       end: moment().format('YYYY-MM-DD')
     },
 
