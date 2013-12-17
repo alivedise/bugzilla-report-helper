@@ -588,7 +588,7 @@
       functional: ''
     },
     {
-      name: 'Pecko',
+      name: 'Peko',
       email: 'pchen@mozilla.com',
       team: 'ux',
       functional: ''
